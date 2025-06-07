@@ -298,6 +298,22 @@
       color: #2a2a2a;
       line-height: 1.6;
     }
+    .modal-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: #f9f9f9;
+    }
+    .modal-content table th, .modal-content table td {
+      border: 1px solid #c0c0c0;
+      padding: 8px;
+      text-align: left;
+    }
+    .modal-content table th {
+      background: #d4a017;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
     .modal-content button {
       padding: 12px 20px;
       background: #3a1f1e;
@@ -355,6 +371,7 @@
       .tracking-section button { font-size: 1.2rem; }
       .modal-content h3 { font-size: 1.8rem; }
       .modal-content p { font-size: 1.2rem; }
+      .modal-content table th, .modal-content table td { font-size: 1.1rem; padding: 10px; }
       .btn-container button { font-size: 1.2rem; }
     }
   </style>
@@ -419,21 +436,26 @@
   </div>
   <div id="tracking-modal" class="modal">
     <div class="modal-content">
-      <h3>Passport Status Report</h3>
-      <p><strong>Passport Number:</strong> FRA-USA-7850359</p>
-      <p><strong>Name:</strong> Joan Luiser</p>
-      <p><strong>Nationality:</strong> American (Temporary Resident - France)</p>
-      <p><strong>Date of Birth:</strong> 14/08/1964</p>
-      <p><strong>Application Date:</strong> 20/04/2025</p>
-      <p><strong>Issue Date:</strong> 23/05/2025</p>
-      <p><strong>Expiry Date:</strong> 23/05/2035</p>
-      <p><strong>Passport Tracking Number:</strong> FRN-2025-07140953</p>
-      <p><strong>Status:</strong> Approved</p>
-      <p><strong>Validation:</strong> Verified</p>
-      <p><strong>Clearance:</strong> Confirmed</p>
-      <p><strong>Remittance Status:</strong> Pending Payment</p>
+      <h3>Official Passport Status Report</h3>
+      <table>
+        <tr><th>Document Type</th><td>Biometric Passport</td></tr>
+        <tr><th>Passport Number</th><td>FRA-USA-7850359</td></tr>
+        <tr><th>Holder's Name</th><td>Joan Luiser</td></tr>
+        <tr><th>Nationality</th><td>American (Temporary Resident - France)</td></tr>
+        <tr><th>Date of Birth</th><td>14 August 1964</td></tr>
+        <tr><th>Place of Birth</th><td>New York, USA</td></tr>
+        <tr><th>Application Date</th><td>20 April 2025</td></tr>
+        <tr><th>Issue Date</th><td>23 May 2025</td></tr>
+        <tr><th>Expiry Date</th><td>23 May 2035</td></tr>
+        <tr><th>Tracking Number</th><td>FRN-2025-07140953</td></tr>
+        <tr><th>Status</th><td>Approved</td></tr>
+        <tr><th>Validation</th><td>Verified</td></tr>
+        <tr><th>Clearance</th><td>Confirmed</td></tr>
+        <tr><th>Remittance Status</th><td>Pending Payment</td></tr>
+        <tr><th>Issuing Authority</th><td>France National Consulate and General Embassy, Washington, DC</td></tr>
+      </table>
       <p><strong>Action Required:</strong> Payment of $350 USD is required by 11:30 AM EDT, June 07, 2025. Contact: +12025550123 or gov.frconsulate.embassy@gmail.com for payment details or courier instructions. Reference Code: PAY-2025-789012.</p>
-      <p><strong>Official Notice:</strong> Issued under the authority of the France National Consulate and General Embassy, Washington, DC. Non-compliance may lead to cancellation under French law.</p>
+      <p><strong>Official Notice:</strong> This document is issued under the authority of the France National Consulate and General Embassy, Washington, DC. Non-compliance with payment deadlines may result in cancellation pursuant to Article 12 of the French Passport Act.</p>
       <button id="close-modal">Close</button>
     </div>
   </div>
@@ -480,8 +502,7 @@
         const pdfWidth = 210;
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        doc.autoPrint(); // Attempt to trigger automatic download
-        doc.save('Joan_Luiser_Passport_Approval.pdf');
+        doc.save('Joan_Luiser_Passport_Approval.pdf'); // Automatic save to device
       }).catch(error => {
         console.error('PDF generation failed:', error);
         generate3DCard();
@@ -501,8 +522,8 @@
           const a = document.createElement('a');
           a.href = URL.createObjectURL(blob);
           a.download = 'Joan_Luiser_Passport_Approval.png';
-          a.rel = 'noopener noreferrer'; // Security
-          a.click(); // Automatic download
+          a.rel = 'noopener noreferrer';
+          a.click(); // Automatic save to device
           URL.revokeObjectURL(a.href);
         }, 'image/png', 1.0); // High quality
       }).catch(error => {
@@ -539,7 +560,7 @@
       const cardDoc = new DOMParser().parseFromString(cardContent, 'text/html');
       html2canvas(cardDoc.body, { scale: 2, useCORS: true }).then(canvas => {
         ctx.drawImage(canvas, 0, 0, cardCanvas.width, cardCanvas.height);
-        const imgData = cardCanvas.toDataURL('image/png');
+        const imgData = canvas.toDataURL('image/png');
         doc.addImage(imgData, 'PNG', 0, 0, 85.6, 53.98);
         doc.save('Joan_Luiser_Passport_Card.pdf');
       });
