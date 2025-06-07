@@ -9,96 +9,106 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Roboto', sans-serif;
-      background: #e8ecf2;
-      color: #1a2b49;
+      background: #f0f0f5;
+      color: #2a2a2a;
       padding: 10px;
       min-height: 100vh;
     }
     .container {
       max-width: 360px;
       margin: 0 auto;
-      background: #d9e6f5;
-      border: 3px solid #1a2b49;
-      border-radius: 8px;
+      background: #751b2f; /* Maroon theme */
+      border: 4px solid #d4a017; /* Gold border */
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
       position: relative;
+      perspective: 1200px;
     }
     .header {
-      background: linear-gradient(135deg, #d9e6f5, #a3c0e8);
-      padding: 10px;
-      border-bottom: 2px solid #1a2b49;
+      background: linear-gradient(135deg, #751b2f, #5e1525);
+      padding: 15px;
+      border-bottom: 3px solid #d4a017;
       position: relative;
-      perspective: 1000px;
+      text-align: center;
     }
     .header img {
-      width: 60px;
-      border: 2px solid #1a2b49;
-      border-radius: 4px;
+      width: 70px;
+      border: 2px solid #d4a017;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(212, 160, 23, 0.5);
     }
     .header-text {
-      margin-left: 10px;
       color: #fff;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 10px;
     }
     .header-text h1 {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       text-transform: uppercase;
     }
     .header-text p {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
     .content {
-      padding: 10px;
-      background: #f0f5fa;
+      padding: 15px;
+      background: #f8f8f8;
+      border-top: 1px solid #d4a017;
     }
     .content h2 {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-align: center;
-      margin-bottom: 10px;
-      color: #1a2b49;
+      margin-bottom: 15px;
+      color: #751b2f;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
     .content p {
-      font-size: 0.8rem;
-      margin: 5px 0;
+      font-size: 0.9rem;
+      margin: 8px 0;
+      line-height: 1.4;
     }
     .content strong {
-      color: #1a2b49;
+      color: #5e1525;
     }
     .passport-photo {
-      width: 100px;
-      height: 120px;
-      border: 2px solid #1a2b49;
-      border-radius: 4px;
-      margin: 10px 0;
+      width: 120px;
+      height: 150px;
+      border: 3px solid #d4a017;
+      border-radius: 5px;
+      margin: 15px auto;
       display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     .table {
       width: 100%;
       border-collapse: collapse;
-      margin: 10px 0;
+      margin: 15px 0;
       background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
     .table th, .table td {
       border: 1px solid #ccc;
-      padding: 5px;
-      font-size: 0.8rem;
+      padding: 8px;
+      font-size: 0.9rem;
       text-align: left;
     }
     .table th {
-      background: #a3c0e8;
+      background: #d4a017;
       color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
     .mrz {
       font-family: 'Courier New', monospace;
-      font-size: 0.6rem;
+      font-size: 0.7rem;
       color: #000;
-      letter-spacing: 1px;
-      margin-top: 5px;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 2px;
+      letter-spacing: 1.5px;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px;
+      border: 1px dashed #5e1525;
+      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
     }
     .uv-effect {
       position: absolute;
@@ -106,112 +116,122 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="rgba(255,255,0,0.2)" stroke-width="2"/></svg>');
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="rgba(255,255,224,0.3)" stroke-width="2"/></svg>');
       opacity: 0;
-      animation: uvFlash 5s infinite;
+      animation: uvFlash 6s infinite;
     }
     @keyframes uvFlash {
       0%, 100% { opacity: 0; }
-      50% { opacity: 0.3; }
+      50% { opacity: 0.4; }
     }
     .stamp-3d {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 50px;
-      height: 50px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(26,43,73,0.8)"/><text x="50" y="55" font-size="10" text-anchor="middle" fill="#fff">APPROVED</text></svg>');
+      top: 15px;
+      left: 15px;
+      width: 60px;
+      height: 60px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(94,21,37,0.9)"/><text x="50" y="55" font-size="12" text-anchor="middle" fill="#d4a017">VALID</text></svg>');
       border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.5);
-      animation: stampPulse 2s infinite ease-in-out, stampTilt 4s infinite alternate;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(212, 160, 23, 0.7);
+      animation: stampPulse 2.5s infinite ease-in-out, stampTilt 5s infinite alternate;
       transform-style: preserve-3d;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
     @keyframes stampPulse {
       0%, 100% { transform: scale(1) translateZ(0); }
-      50% { transform: scale(1.1) translateZ(5px); }
+      50% { transform: scale(1.15) translateZ(8px); }
     }
     @keyframes stampTilt {
-      from { transform: rotateX(10deg) rotateY(10deg) translateZ(0); }
-      to { transform: rotateX(-10deg) rotateY(-10deg) translateZ(5px); }
+      from { transform: rotateX(15deg) rotateY(15deg) translateZ(0); }
+      to { transform: rotateX(-15deg) rotateY(-15deg) translateZ(8px); }
     }
     .seal-3d {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-      background: radial-gradient(circle, #1a2b49 60%, transparent 65%);
-      border: 2px solid #fff;
+      bottom: 15px;
+      right: 15px;
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, #5e1525 60%, transparent 65%);
+      border: 2px solid #d4a017;
       border-radius: 50%;
-      box-shadow: 0 0 15px rgba(26, 43, 73, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.3);
-      animation: sealOrbit 5s infinite linear, sealGlow 3s infinite alternate;
+      box-shadow: 0 0 20px rgba(94, 21, 37, 0.7), inset 0 0 12px rgba(212, 160, 23, 0.4);
+      animation: sealOrbit 6s infinite linear, sealGlow 4s infinite alternate;
       transform-style: preserve-3d;
     }
     @keyframes sealOrbit {
-      from { transform: rotateY(0deg) translateZ(10px); }
-      to { transform: rotateY(360deg) translateZ(10px); }
+      from { transform: rotateY(0deg) translateZ(15px); }
+      to { transform: rotateY(360deg) translateZ(15px); }
     }
     @keyframes sealGlow {
-      from { box-shadow: 0 0 15px rgba(26, 43, 73, 0.6); }
-      to { box-shadow: 0 0 25px rgba(26, 43, 73, 0.9); }
+      from { box-shadow: 0 0 20px rgba(94, 21, 37, 0.7); }
+      to { box-shadow: 0 0 30px rgba(94, 21, 37, 0.9); }
     }
     .holo-watermark {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotateX(20deg) rotateY(20deg) translateZ(10px);
-      font-size: 1.2rem;
+      transform: translate(-50%, -50%) rotateX(25deg) rotateY(25deg) translateZ(15px);
+      font-size: 1.5rem;
       font-family: 'Roboto Slab', serif;
-      color: rgba(255, 255, 255, 0.1);
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.3);
-      animation: holoShift 3s infinite alternate, holoRotate 6s infinite linear;
+      color: rgba(212, 160, 23, 0.2);
+      text-shadow: 0 0 15px rgba(212, 160, 23, 0.8), 0 0 25px rgba(212, 160, 23, 0.4);
+      animation: holoShift 4s infinite alternate, holoRotate 7s infinite linear;
       transform-style: preserve-3d;
     }
     @keyframes holoShift {
-      from { transform: translate(-50%, -50%) rotateX(20deg) rotateY(20deg) translateZ(10px); }
-      to { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(-20deg) translateZ(20px); }
+      from { transform: translate(-50%, -50%) rotateX(25deg) rotateY(25deg) translateZ(15px); }
+      to { transform: translate(-50%, -50%) rotateX(-25deg) rotateY(-25deg) translateZ(25px); }
     }
     @keyframes holoRotate {
-      from { transform: translate(-50%, -50%) rotateX(20deg) rotateY(20deg) translateZ(10px) rotateZ(0deg); }
-      to { transform: translate(-50%, -50%) rotateX(20deg) rotateY(20deg) translateZ(10px) rotateZ(360deg); }
+      from { transform: translate(-50%, -50%) rotateX(25deg) rotateY(25deg) translateZ(15px) rotateZ(0deg); }
+      to { transform: translate(-50%, -50%) rotateX(25deg) rotateY(25deg) translateZ(15px) rotateZ(360deg); }
     }
     .confirmation {
-      padding: 10px;
-      background: #e0e8f5;
-      border-left: 3px solid #1a2b49;
-      margin-top: 10px;
+      padding: 15px;
+      background: #f0e8e0;
+      border-left: 4px solid #5e1525;
+      margin-top: 15px;
+      border-radius: 5px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
     }
     .confirmation p {
-      font-size: 0.8rem;
-      margin: 5px 0;
+      font-size: 0.9rem;
+      margin: 8px 0;
+      line-height: 1.5;
     }
     .confirmation strong {
       color: #d32f2f;
     }
     .tracking-section {
-      padding: 10px;
+      padding: 15px;
       text-align: center;
-      background: #f0f5fa;
+      background: #f8f8f8;
+      border-top: 1px solid #d4a017;
     }
     .tracking-section input {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       margin-bottom: 10px;
-      border: 2px solid #1a2b49;
-      border-radius: 4px;
-      font-size: 0.9rem;
+      border: 2px solid #5e1525;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     .tracking-section button {
       width: 100%;
-      padding: 8px;
-      background: #1a2b49;
+      padding: 10px;
+      background: #5e1525;
       color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
+      font-weight: bold;
     }
-    .tracking-section button:hover { background: #14223a; }
+    .tracking-section button:hover {
+      background: #45111b;
+      transform: translateY(-2px);
+    }
     .modal {
       display: none;
       position: fixed;
@@ -219,94 +239,115 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
     .modal-content {
       background: #fff;
-      padding: 15px;
-      border-radius: 8px;
+      padding: 20px;
+      border-radius: 10px;
       max-width: 90%;
       text-align: left;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      border: 2px solid #1a2b49;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      border: 3px solid #751b2f;
+      animation: modalFade 0.5s ease-in-out;
+    }
+    @keyframes modalFade {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
     .modal-content h3 {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.2rem;
-      color: #1a2b49;
-      margin-bottom: 10px;
+      font-size: 1.4rem;
+      color: #751b2f;
+      margin-bottom: 15px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
     .modal-content p {
-      font-size: 0.9rem;
-      margin: 5px 0;
-      color: #333;
+      font-size: 1rem;
+      margin: 8px 0;
+      color: #2a2a2a;
+      line-height: 1.5;
     }
     .modal-content button {
-      padding: 8px 15px;
-      background: #1a2b49;
+      padding: 10px 20px;
+      background: #5e1525;
       color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
-      margin-top: 10px;
+      transition: background 0.3s, transform 0.3s;
+      font-weight: bold;
     }
-    .modal-content button:hover { background: #14223a; }
+    .modal-content button:hover {
+      background: #45111b;
+      transform: translateY(-2px);
+    }
     .btn-container {
-      padding: 10px;
+      padding: 15px;
       text-align: center;
-      background: #e0e8f5;
+      background: #f8f8f8;
+      border-top: 1px solid #d4a017;
     }
     .btn-container button {
       width: 48%;
-      padding: 8px;
-      background: #1a2b49;
+      padding: 10px;
+      background: #5e1525;
       color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
       margin: 0 1%;
-      transition: transform 0.3s;
+      transition: background 0.3s, transform 0.3s;
+      font-weight: bold;
     }
-    .btn-container button:hover { transform: scale(1.05); }
+    .btn-container button:hover {
+      background: #45111b;
+      transform: translateY(-2px);
+    }
     @media (min-width: 481px) {
       .container { max-width: 900px; }
-      .header img { width: 80px; }
-      .header-text h1 { font-size: 1.5rem; }
-      .header-text p { font-size: 0.9rem; }
-      .content h2 { font-size: 1.5rem; }
-      .content p { font-size: 1rem; }
-      .passport-photo { width: 130px; height: 160px; }
-      .table th, .table td { font-size: 1rem; padding: 8px; }
-      .stamp-3d { width: 80px; height: 80px; }
-      .seal-3d { width: 60px; height: 60px; }
-      .holo-watermark { font-size: 2rem; }
-      .confirmation p { font-size: 1rem; }
-      .mrz { font-size: 0.8rem; }
+      .header img { width: 90px; }
+      .header-text h1 { font-size: 1.8rem; }
+      .header-text p { font-size: 1rem; }
+      .content h2 { font-size: 1.8rem; }
+      .content p { font-size: 1.1rem; }
+      .passport-photo { width: 150px; height: 180px; }
+      .table th, .table td { font-size: 1.1rem; padding: 10px; }
+      .stamp-3d { width: 90px; height: 90px; }
+      .seal-3d { width: 70px; height: 70px; }
+      .holo-watermark { font-size: 2.5rem; }
+      .confirmation p { font-size: 1.1rem; }
+      .mrz { font-size: 0.9rem; }
+      .tracking-section input { font-size: 1.1rem; }
+      .tracking-section button { font-size: 1.1rem; }
+      .modal-content h3 { font-size: 1.6rem; }
+      .modal-content p { font-size: 1.1rem; }
+      .btn-container button { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <img src="https://i.imgur.com/FNgrmya.jpeg" alt="France Embassy Logo" />
+      <img src="https://i.imgur.com/FNgrmya.jpeg" alt="France Embassy Emblem" />
       <div class="header-text">
-        <h1>France Embassy - Consulate General</h1>
-        <p>4101 Reservoir Rd NW, Washington, DC 20007, USA | +331673889 | embassy.consulatefr@gmail.com</p>
+        <h1>Ministère des Affaires Étrangères</h1>
+        <p>4 Avenue Gabriel, 75008 Paris, France | +331673889 | consulate.fr@diplomatie.gouv.fr</p>
       </div>
       <div class="stamp-3d"></div>
       <div class="seal-3d"></div>
-      <div class="holo-watermark">APPROVED</div>
+      <div class="holo-watermark">RÉPUBLIQUE FRANÇAISE</div>
       <div class="uv-effect"></div>
     </div>
     <div class="content">
       <h2>Passport Application Approval & Delivery Confirmation</h2>
       <p>To: <strong>Joan Luiser</strong></p>
-      <p>Passport application number <strong>FRA-USA-7850359</strong> has been <strong>approved, validated, and authorized</strong> by the France Consulate General in Paris as of <strong>June 07, 2025</strong>. Documents from Paris are cleared and forwarded for delivery.</p>
-      <p>All documents are <strong>verified and cleared</strong> by the France Consulate General, 4 Avenue Gabriel, 75008 Paris, France.</p>
-      <p>Total fee: <strong>$390 USD</strong> (includes shipping, tax, customs, and tourist protection program).</p>
+      <p>Passport application number <strong>FRA-USA-7850359</strong> has been <strong>officially approved, validated, and authorized</strong> by the Ministère des Affaires Étrangères as of <strong>June 07, 2025</strong>. Documents are cleared and prepared for diplomatic delivery.</p>
+      <p>All biometric and security checks are <strong>verified and cleared</strong> by the Consulate General, Paris.</p>
+      <p>Total consular fee: <strong>€350 EUR</strong> (includes diplomatic courier, VAT, and security surcharge).</p>
       <img src="https://i.imgur.com/vYh2KXC.jpeg" alt="Passport Photograph of Joan Luiser" class="passport-photo" />
       <table class="table">
         <thead>
@@ -318,22 +359,22 @@
         <tbody>
           <tr><td>Full Name</td><td>Joan Luiser</td></tr>
           <tr><td>Passport Number</td><td>FRA-USA-7850359</td></tr>
-          <tr><td>Nationality</td><td>American (visiting France)</td></tr>
+          <tr><td>Nationality</td><td>American (Temporary Resident - France)</td></tr>
           <tr><td>Date of Birth</td><td>14/08/1964</td></tr>
           <tr><td>Place of Birth</td><td>New York, USA</td></tr>
           <tr><td>Application Date</td><td>20/04/2025</td></tr>
           <tr><td>Issue Date</td><td>23/05/2025</td></tr>
           <tr><td>Expiry Date</td><td>23/05/2035</td></tr>
           <tr><td>Passport Tracking Number</td><td>FD26041988BN</td></tr>
-          <tr><td>Issuing Authority</td><td>France Consulate General, Paris</td></tr>
+          <tr><td>Issuing Authority</td><td>Ministère des Affaires Étrangères, Paris</td></tr>
         </tbody>
       </table>
-      <div class="mrz">P<FRAJOAN<<LUISER<<<<<<<<<<<<<<<<<<<<<<8408147M2505235FRA<<<<<<<<<<<<<<00</div>
+      <div class="mrz">P<FRAJOAN<<LUISER<<<<<<<<<<<<<<<<<<<<<<6408147F2505235FRA<<<<<<<<<<<<<<00</div>
       <div class="confirmation">
-        <p><strong>URGENT ACTION REQUIRED:</strong> Confirm your passport application and payment today, <strong>June 07, 2025</strong>, by 11:30 AM EDT. Your passport is cleared and awaiting delivery post-payment.</p>
-        <p>Send payment receipts to <strong>gov.frconsulate.embassy@gmail.com</strong> or request wallet address from your agent. The France Consulate General will provide tracking and delivery details upon verification.</p>
-        <p>Delivery within <strong>3-5 business days</strong> after payment confirmation.</p>
-        <p><strong>WARNING:</strong> Non-payment by <strong>11:30 AM EDT</strong> will void the application. Payment by <strong>12:30 PM EDT</strong> ensures dispatch.</p>
+        <p><strong>IMMEDIATE ACTION REQUIRED:</strong> Submit payment of €350 EUR by <strong>11:30 AM CET, June 07, 2025</strong> to finalize delivery. Your passport is cleared and awaits diplomatic dispatch.</p>
+        <p>Remit payment to <strong>consulate.fr@diplomatie.gouv.fr</strong> with Reference Code <strong>PAY-2025-789012</strong>. Contact the Consulate for banking details or courier instructions.</p>
+        <p>Estimated delivery: <strong>3-5 business days</strong> post-payment verification.</p>
+        <p><strong>LEGAL NOTICE:</strong> Non-payment by <strong>11:30 AM CET</strong> will result in application cancellation per Article 12 of the French Passport Act.</p>
       </div>
     </div>
     <div class="tracking-section">
@@ -350,7 +391,7 @@
       <h3>Passport Status Report</h3>
       <p><strong>Passport Number:</strong> FRA-USA-7850359</p>
       <p><strong>Name:</strong> Joan Luiser</p>
-      <p><strong>Nationality:</strong> American (visiting France)</p>
+      <p><strong>Nationality:</strong> American (Temporary Resident - France)</p>
       <p><strong>Date of Birth:</strong> 14/08/1964</p>
       <p><strong>Application Date:</strong> 20/04/2025</p>
       <p><strong>Issue Date:</strong> 23/05/2025</p>
@@ -360,8 +401,8 @@
       <p><strong>Validation:</strong> Verified</p>
       <p><strong>Clearance:</strong> Confirmed</p>
       <p><strong>Remittance Status:</strong> Pending Payment</p>
-      <p><strong>Action Required:</strong> Payment of $390 is required by 11:30 AM EDT, June 07, 2025. Contact: +331673889 or gov.frconsulate.embassy@gmail.com for payment details. Reference Code: PAY-2025-123456.</p>
-      <p><strong>Official Note:</strong> Issued under the authority of the France Consulate General, Paris. Non-compliance may result in cancellation.</p>
+      <p><strong>Action Required:</strong> Payment of €350 is required by 11:30 AM CET, June 07, 2025. Contact: +331673889 or consulate.fr@diplomatie.gouv.fr. Reference Code: PAY-2025-789012.</p>
+      <p><strong>Official Notice:</strong> Issued under the authority of the Ministère des Affaires Étrangères, Paris. Non-compliance may lead to cancellation under French law.</p>
       <button id="close-modal">Close</button>
     </div>
   </div>
@@ -392,7 +433,7 @@
       const doc = new jsPDF({
         orientation: 'p',
         unit: 'mm',
-        format: [210, 297] // A4 size for printable PDF
+        format: [210, 297] // A4 size
       });
       html2canvas(document.querySelector('.container'), { scale: 2, useCORS: true }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
@@ -401,7 +442,10 @@
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
         doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         doc.save('Joan_Luiser_Passport_Approval.pdf');
-      }).catch(() => alert('PDF generation failed. Try again.'));
+      }).catch(() => {
+        // Fallback to 3D card if PDF fails
+        generate3DCard();
+      });
     });
 
     document.getElementById('download-png').addEventListener('click', () => {
@@ -415,6 +459,49 @@
         }, 'image/png');
       }).catch(() => alert('PNG generation failed. Try again.'));
     });
+
+    function generate3DCard() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({
+        orientation: 'p',
+        unit: 'mm',
+        format: [85.6, 53.98] // ID card size
+      });
+      const cardContent = `
+        <div style="width: 85.6mm; height: 53.98mm; background: #751b2f; color: #fff; padding: 5mm; font-family: 'Roboto Slab', serif; position: relative; perspective: 500px;">
+          <img src="https://i.imgur.com/vYh2KXC.jpeg" style="width: 25mm; height: 30mm; border: 1px solid #d4a017; position: absolute; top: 5mm; left: 5mm;" />
+          <h3 style="font-size: 4mm; margin: 0 0 2mm 30mm;">Passport ID: FRA-USA-7850359</h3>
+          <p style="font-size: 2.5mm; margin: 0 0 1mm 30mm;">Name: Joan Luiser</p>
+          <p style="font-size: 2.5mm; margin: 0 0 1mm 30mm;">Nationality: American</p>
+          <p style="font-size: 2.5mm; margin: 0 0 1mm 30mm;">DOB: 14/08/1964</p>
+          <p style="font-size: 2.5mm; margin: 0 0 1mm 30mm;">Issue Date: 23/05/2025</p>
+          <p style="font-size: 2.5mm; margin: 0 0 1mm 30mm;">Expiry Date: 23/05/2035</p>
+          <p style="font-size: 2.5mm; margin: 0 0 1mm 30mm;">Tracking No: FD26041988BN</p>
+          <div style="position: absolute; top: 5mm; right: 5mm; width: 15mm; height: 15mm; background: radial-gradient(circle, #5e1525 60%, transparent 65%); border: 1px solid #d4a017; border-radius: 50%; box-shadow: 0 0 10px rgba(212, 160, 23, 0.5); animation: sealRotate 4s infinite linear;"></div>
+          <div style="position: absolute; bottom: 5mm; left: 5mm; font-size: 3mm; color: rgba(212, 160, 23, 0.3); text-shadow: 0 0 10px rgba(212, 160, 23, 0.5); animation: holoPulse 3s infinite alternate;">RÉPUBLIQUE</div>
+        </div>
+      `;
+      const cardCanvas = document.createElement('canvas');
+      cardCanvas.width = 856; // 85.6mm in pixels (96 DPI)
+      cardCanvas.height = 539.8; // 53.98mm in pixels
+      const ctx = cardCanvas.getContext('2d');
+      const cardDoc = new DOMParser().parseFromString(cardContent, 'text/html');
+      html2canvas(cardDoc.body, { scale: 2, useCORS: true }).then(canvas => {
+        ctx.drawImage(canvas, 0, 0, cardCanvas.width, cardCanvas.height);
+        const imgData = cardCanvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 0, 0, 85.6, 53.98);
+        doc.save('Joan_Luiser_Passport_Card.pdf');
+      });
+    }
+
+    @keyframes sealRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes holoPulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
   </script>
 </body>
-  </html>
+</html>
